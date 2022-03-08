@@ -1,0 +1,384 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#F8FDFD"
+    tools:context=".fragment.WordFragment">
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fillViewport="true"
+        android:overScrollMode="never">
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <LinearLayout
+                android:id="@+id/linear_top"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:id="@+id/img_calender"
+                    android:layout_width="25dp"
+                    android:layout_height="match_parent"
+                    android:layout_marginStart="20dp"
+
+                    android:src="@drawable/calender" />
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/card_search"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_marginStart="20dp"
+                    android:layout_weight="1"
+                    android:padding="3dp"
+                    app:cardBackgroundColor="@color/colorLightWhite"
+                    app:cardCornerRadius="15dp"
+                    app:cardElevation="0dp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:gravity="center_vertical|center_horizontal">
+
+                        <ImageView
+
+                            android:layout_width="25dp"
+                            android:layout_height="25dp"
+                            android:src="@drawable/search" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="查询"
+                            android:textSize="16sp"
+
+                            />
+                    </LinearLayout>
+                </androidx.cardview.widget.CardView>
+
+                <ImageView
+                    android:id="@+id/massage_img"
+                    android:layout_width="28dp"
+                    android:layout_height="33dp"
+                    android:layout_marginHorizontal="20dp"
+                    android:layout_toEndOf="@id/card_search"
+                    android:src="@drawable/message" />
+            </LinearLayout>
+
+
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/card_plan"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/linear_top"
+                android:layout_marginHorizontal="40dp"
+                android:layout_marginTop="40dp"
+                >
+
+
+                <RelativeLayout
+
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <RelativeLayout
+
+                        android:id="@+id/relative_book"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="20dp">
+
+                        <androidx.cardview.widget.CardView
+                            android:id="@+id/card_cover"
+                            android:layout_width="70dp"
+                            android:layout_height="105dp"
+                            app:cardBackgroundColor="@color/colorLightRed"
+                            app:cardCornerRadius="5dp"
+                            app:cardElevation="0dp">
+
+                            <ImageView
+                                android:id="@+id/item_img_book"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:scaleType="fitXY" />
+
+                        </androidx.cardview.widget.CardView>
+
+                        <RelativeLayout
+                            android:paddingHorizontal="10dp"
+
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_toEndOf="@+id/card_cover"
+                            android:gravity="center_vertical">
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:orientation="vertical">
+
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:gravity="center_vertical"
+                                    android:orientation="horizontal">
+
+                                    <TextView
+                                        android:id="@+id/item_text_book_name"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_marginStart="5dp"
+                                        android:gravity="center"
+                                        android:text="单词书名称"
+                                        android:textColor="@color/colorBlack"
+                                        android:textSize="17sp" />
+
+                                    <View
+                                        android:layout_width="0dp"
+                                        android:layout_height="20dp"
+                                        android:layout_weight="1" />
+
+                                    <com.google.android.material.button.MaterialButton
+                                        android:layout_width="50dp"
+                                        android:layout_height="20dp"
+                                        android:insetTop="0dp"
+                                        android:insetBottom="0dp"
+                                        android:paddingLeft="0dp"
+                                        android:paddingTop="0dp"
+                                        android:paddingRight="0dp"
+                                        android:paddingBottom="0dp"
+                                        android:text="调整计划"
+                                        android:textSize="5sp"
+                                        android:textAlignment="center"
+                                        android:layout_margin="0dp"
+                                        app:iconPadding="0dp" />
+                                </LinearLayout>
+
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginTop="10dp"
+                                    android:orientation="vertical">
+
+                                    <TextView
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:text="每天30词，剩余90天" />
+
+
+                                    <ProgressBar
+                                        android:layout_marginTop="5dp"
+                                        style="?android:attr/progressBarStyleHorizontal"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="5dp"
+                                        android:layout_gravity="center"
+                                        android:max="100"
+                                        android:progress="50" />
+
+                                </LinearLayout>
+                                <RelativeLayout
+                                    android:layout_marginTop="5dp"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content">
+
+                                    <TextView
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_alignParentStart="true"
+                                        android:text="已学单词"
+                                        android:textSize="10sp" />
+
+                                    <TextView
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:text="3/3032"
+                                        android:textSize="10sp"
+                                        android:layout_alignParentRight="true"/>
+                                </RelativeLayout>
+                            </LinearLayout>
+
+                        </RelativeLayout>
+                    </RelativeLayout>
+
+                    <View
+                        android:id="@+id/view_line"
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:layout_below="@+id/relative_book"
+                        android:layout_marginHorizontal="20dp"
+                        android:background="#CAC6C6" />
+
+                    <LinearLayout
+                        android:id="@+id/linear_plan"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/view_line"
+                        android:layout_marginStart="20dp"
+                        android:layout_marginTop="20dp"
+                        android:layout_marginEnd="20dp"
+                        android:layout_marginBottom="20dp"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:gravity="center"
+                            android:text="今日计划"
+                            android:textColor="@color/colorBlack"
+                            android:textSize="17sp" />
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="20dp"
+                            android:orientation="horizontal">
+
+                            <LinearLayout
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:orientation="vertical">
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="已学单词"
+                                    android:textColor="@color/colorBlack"
+                                    android:textSize="10sp" />
+
+                                <LinearLayout
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content">
+
+                                    <TextView
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_marginTop="5dp"
+                                        android:gravity="center"
+                                        android:text="30"
+                                        android:textColor="@color/colorBlack"
+                                        android:textSize="47sp" />
+
+                                    <TextView
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_marginStart="5dp"
+                                        android:text="词"
+                                        android:textColor="@color/colorBlack"
+                                        android:textSize="15sp" />
+                                </LinearLayout>
+
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="80dp"
+                                android:orientation="vertical">
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="需复习"
+                                    android:textColor="@color/colorBlack"
+                                    android:textSize="10sp" />
+
+                                <LinearLayout
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content">
+
+                                    <TextView
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_marginTop="5dp"
+                                        android:gravity="center"
+                                        android:text="25"
+                                        android:textColor="@color/colorBlack"
+                                        android:textSize="47sp" />
+
+                                    <TextView
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_marginStart="5dp"
+                                        android:text="词"
+                                        android:textColor="@color/colorBlack"
+                                        android:textSize="15sp" />
+                                </LinearLayout>
+
+                            </LinearLayout>
+
+
+                        </LinearLayout>
+                    </LinearLayout>
+
+
+                    <com.google.android.material.button.MaterialButton
+                        android:layout_width="250dp"
+                        android:layout_height="60dp"
+                        android:layout_below="@+id/linear_plan"
+                        android:layout_centerHorizontal="true"
+                        android:layout_marginBottom="50dp"
+                        android:text="开始背单词"
+                        android:textStyle="bold" />
+
+                </RelativeLayout>
+
+
+
+            </com.google.android.material.card.MaterialCardView>
+
+            <com.google.android.material.card.MaterialCardView
+                android:layout_margin="40dp"
+
+                android:layout_below="@+id/card_plan"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <LinearLayout
+                    android:padding="5dp"
+                    android:gravity="center_vertical"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <LinearLayout
+                        android:layout_marginStart="20dp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="单词速过"
+                            android:textColor="@color/colorBlack"
+                            android:textSize="15sp"  />
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="快速学习单词"
+
+                            android:textSize="10sp"  />
+                    </LinearLayout>
+
+                    <View
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1" />
+                    <com.google.android.material.button.MaterialButton
+                        android:layout_marginHorizontal="40dp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="开始" />
+
+                </LinearLayout>
+            </com.google.android.material.card.MaterialCardView>
+        </RelativeLayout>
+    </androidx.core.widget.NestedScrollView>
+
+</RelativeLayout>

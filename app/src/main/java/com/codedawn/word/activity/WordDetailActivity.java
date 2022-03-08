@@ -1,14 +1,16 @@
-package com.codedawn.word;
+package com.codedawn.word.activity;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
 
-public class MainActivity extends AppCompatActivity {
+import com.codedawn.word.R;
+
+public class WordDetailActivity extends BasicActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.activity_word_detail);
     }
 }

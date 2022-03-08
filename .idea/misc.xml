@@ -3,7 +3,21 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
-        <entry key="..\:/my/project/Word/app/src/main/res/layout/activity_main.xml" value="0.40217391304347827" />
+        <entry key="..\:/my/project/Word/app/src/main/res/drawable/ic_launcher_background.xml" value="0.2245" />
+        <entry key="..\:/my/project/Word/app/src/main/res/layout/acivity_login.xml" value="0.30344202898550726" />
+        <entry key="..\:/my/project/Word/app/src/main/res/layout/activity_book_list.xml" value="0.40217391304347827" />
+        <entry key="..\:/my/project/Word/app/src/main/res/layout/activity_home.xml" value="0.176" />
+        <entry key="..\:/my/project/Word/app/src/main/res/layout/activity_learn_word.xml" value="0.23052536231884058" />
+        <entry key="..\:/my/project/Word/app/src/main/res/layout/activity_login.xml" value="0.30344202898550726" />
+        <entry key="..\:/my/project/Word/app/src/main/res/layout/activity_main.xml" value="0.264" />
+        <entry key="..\:/my/project/Word/app/src/main/res/layout/activity_welcome.xml" value="0.40217391304347827" />
+        <entry key="..\:/my/project/Word/app/src/main/res/layout/activity_word_detail.xml" value="0.264" />
+        <entry key="..\:/my/project/Word/app/src/main/res/layout/fragment_book_list.xml" value="0.18743667679837892" />
+        <entry key="..\:/my/project/Word/app/src/main/res/layout/fragment_mine.xml" value="0.1962962962962963" />
+        <entry key="..\:/my/project/Word/app/src/main/res/layout/fragment_review.xml" value="0.1962962962962963" />
+        <entry key="..\:/my/project/Word/app/src/main/res/layout/fragment_word.xml" value="0.4" />
+        <entry key="..\:/my/project/Word/app/src/main/res/layout/item_book_list.xml" value="0.25" />
+        <entry key="..\:/my/project/Word/app/src/main/res/menu/bottom_nav_menu.xml" value="0.4036458333333333" />
       </map>
     </option>
   </component>
