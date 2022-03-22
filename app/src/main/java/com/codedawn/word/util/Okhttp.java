@@ -13,16 +13,17 @@ import okhttp3.Response;
 
 public class Okhttp {
 
+    public static final OkHttpClient okHttpClient = new OkHttpClient();
+
     public static void request(String url, Callback callback) {
-        OkHttpClient okHttpClient = new OkHttpClient();
         Request request = new Request.Builder()
                 .get()
                 .url(url)
                 .build();
         Call call = okHttpClient.newCall(request);
         call.enqueue(callback);
-
     }
+
 
 
 }

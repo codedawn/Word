@@ -2,7 +2,6 @@ package com.codedawn.word.fragment;
 
 import android.os.Bundle;
 
-import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
@@ -12,30 +11,26 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.codedawn.word.R;
-import com.codedawn.word.adapter.WordBookAdapter;
+import com.codedawn.word.adapter.WordBookListAdapter;
 import com.codedawn.word.json.booklist.Book;
-import com.codedawn.word.json.booklist.Cates;
-import com.codedawn.word.util.GsonUtil;
-import com.codedawn.word.util.LogUtil;
-import com.codedawn.word.util.Okhttp;
 
-import java.io.IOException;
-import java.util.ArrayList;
 import java.util.List;
-import java.util.Objects;
 
-import okhttp3.Call;
-import okhttp3.Callback;
-import okhttp3.Response;
-
-
+/**
+ * 单词书列表
+ */
 public class BookListFragment extends Fragment {
 
     private RecyclerView recyclerView;
 
 
     // 书单数据
-    private List<Book> bookLists = new ArrayList<>();
+    private  List<Book> bookLists;
+
+
+    public BookListFragment() {
+
+    }
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -57,16 +52,15 @@ public class BookListFragment extends Fragment {
     private void initRecyclerView() {
         LinearLayoutManager linearLayoutManager = new LinearLayoutManager(getActivity());
         recyclerView.setLayoutManager(linearLayoutManager);
-        recyclerView.setAdapter(new WordBookAdapter(bookLists));
+        recyclerView.setAdapter(new WordBookListAdapter(bookLists));
 
     }
 
 
     public static BookListFragment newInstance(List<Book> bookList) {
-        BookListFragment fragment = new BookListFragment();
-        fragment.bookLists.addAll(bookList);
-
-        return fragment;
+        BookListFragment bookListFragment = new BookListFragment();
+        bookListFragment.bookLists = bookList;
+        return bookListFragment;
     }
 
 }

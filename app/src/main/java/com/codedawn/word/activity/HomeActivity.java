@@ -1,21 +1,19 @@
 package com.codedawn.word.activity;
 
 import androidx.annotation.NonNull;
-import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentTransaction;
 
-import android.content.Intent;
 import android.os.Bundle;
 import android.view.MenuItem;
-import android.view.View;
 
 import com.codedawn.word.R;
-import com.codedawn.word.fragment.MineFragment;
-import com.codedawn.word.fragment.ReviewFragment;
-import com.codedawn.word.fragment.WordFragment;
+import com.codedawn.word.fragment.home.MineFragment;
+import com.codedawn.word.fragment.home.ReviewFragment;
+import com.codedawn.word.fragment.home.WordFragment;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.navigation.NavigationBarView;
+
 
 public class HomeActivity extends BasicActivity {
 

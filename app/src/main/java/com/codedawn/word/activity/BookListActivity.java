@@ -2,35 +2,32 @@ package com.codedawn.word.activity;
 
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
-import androidx.recyclerview.widget.LinearLayoutManager;
-import androidx.recyclerview.widget.RecyclerView;
 import androidx.viewpager2.adapter.FragmentStateAdapter;
 import androidx.viewpager2.widget.ViewPager2;
 
 import android.os.Bundle;
-import android.view.View;
 import android.widget.ImageView;
 
 import com.codedawn.word.R;
-import com.codedawn.word.adapter.WordBookAdapter;
 import com.codedawn.word.fragment.BookListFragment;
-import com.codedawn.word.json.booklist.Book;
 import com.codedawn.word.json.booklist.BookJsonRootBean;
+import com.codedawn.word.util.DepthPageTransformer;
 import com.codedawn.word.util.GsonUtil;
-import com.codedawn.word.util.LogUtil;
 import com.codedawn.word.util.Okhttp;
+import com.codedawn.word.util.ZoomOutPageTransformer;
 import com.google.android.material.tabs.TabLayout;
 import com.google.android.material.tabs.TabLayoutMediator;
 
 import java.io.IOException;
-import java.util.ArrayList;
-import java.util.List;
 import java.util.Objects;
 
 import okhttp3.Call;
 import okhttp3.Callback;
 import okhttp3.Response;
 
+/**
+ * 书列表，展示可以学习的单词书
+ */
 public class BookListActivity extends BasicActivity {
 
 
@@ -73,7 +70,8 @@ public class BookListActivity extends BasicActivity {
                     @Override
                     public void run() {
                         try {
-                           bookJsonRootBean=GsonUtil.parseJsonToBook(Objects.requireNonNull(response.body()).string());
+                            //解析json
+                           bookJsonRootBean=GsonUtil.parseJsonToBookJsonRootBean(Objects.requireNonNull(response.body()).string());
                             initViewPager();
                         } catch (IOException e) {
                             e.printStackTrace();
@@ -94,8 +92,10 @@ public class BookListActivity extends BasicActivity {
 //        // 设置缓存数量，对应 RecyclerView 中的 mCachedViews，即屏幕外的视图数量
 //        ((RecyclerView)viewPager2.getChildAt(0)).setItemViewCacheSize(0);
 
+        viewPager2.setPageTransformer(new ZoomOutPageTransformer());
 
-        // 这里使用第二种方法
+//        viewPager2.setPageTransformer(new DepthPageTransformer());
+
         viewPager2.setAdapter(new FragmentStateAdapter(BookListActivity.this) {
             @NonNull
             @Override
@@ -119,11 +119,12 @@ public class BookListActivity extends BasicActivity {
             }
         });
 
+        //smothscoll为true更平滑
         // 这里第四个参数一定要设置为false  如果设置为true时 我们在滑动时 BlankFragment的创建 和 销毁 都很正常
         // 一旦 我们通过 点击tabLayout时 如果两个tab距离过远  那么所有划过的tabLayout 都会创建和销毁BlankFragment 这显然不是我们想要的
 
         // tabLayout 和 viewPager 联动
-        new TabLayoutMediator(tabLayout, viewPager2,true,false, new TabLayoutMediator.TabConfigurationStrategy() {
+        new TabLayoutMediator(tabLayout, viewPager2,true,true, new TabLayoutMediator.TabConfigurationStrategy() {
             @Override
             public void onConfigureTab(@NonNull TabLayout.Tab tab, int position) {
                 tab.setText(bookJsonRootBean.getCates().get(position).getCateName());

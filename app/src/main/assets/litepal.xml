@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<litepal>
+    <dbname value="word"></dbname>
+    <version value="13"></version>
+    <list>
+        <mapping class="com.codedawn.word.litepal.Vocabulary"></mapping>
+        <mapping class="com.codedawn.word.litepal.CurrentBook"></mapping>
+        <mapping class="com.codedawn.word.litepal.UserData"></mapping>
+    </list>
+</litepal>

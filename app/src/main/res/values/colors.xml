@@ -37,4 +37,9 @@
     <color name="colorBgWhite">#FFFFFF</color>
     <color name="colorBgWhiteN">#424242</color>
     <color name="colorBgLittleWhite">#FBFBFD</color>
+
+<!--    键盘颜色-->
+    <color name="keyPress">#E5E5E5</color>
+    <color name="keyNormal">#FCFCFC</color>
+    <color name="keyHint">#5CDC8C</color>
 </resources>

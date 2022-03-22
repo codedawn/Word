@@ -51,7 +51,7 @@
                             android:layout_height="wrap_content">
 
                             <me.grantland.widget.AutofitTextView
-                                android:id="@+id/text_wd_name"
+                                android:id="@+id/text_word_name"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:layout_centerVertical="true"
@@ -139,7 +139,7 @@
                                     android:background="?android:attr/selectableItemBackground">
 
                                     <ImageView
-                                        android:id="@+id/img_wd_star"
+                                        android:id="@+id/image_word_star"
                                         android:layout_width="20dp"
                                         android:layout_height="20dp"
                                         android:layout_centerInParent="true"
@@ -202,7 +202,7 @@
                                     android:textSize="13sp" />
 
                                 <TextView
-                                    android:id="@+id/text_wd_phone_uk"
+                                    android:id="@+id/text_word_phone_uk"
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
                                     android:layout_marginStart="10dp"
@@ -230,7 +230,7 @@
                                     android:textSize="13sp" />
 
                                 <TextView
-                                    android:id="@+id/text_wd_phone_usa"
+                                    android:id="@+id/text_word_phone_usa"
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
                                     android:layout_marginStart="10dp"
@@ -244,7 +244,7 @@
 
                         <!--释义-->
                         <TextView
-                            android:id="@+id/text_wd_interpretation"
+                            android:id="@+id/text_word_trans"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_marginTop="15dp"

@@ -1,4 +1,4 @@
-package com.codedawn.word.fragment;
+package com.codedawn.word.fragment.home;
 
 import android.os.Bundle;
 

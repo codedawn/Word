@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".activity.KeyboardSpellActivity"
+    android:background="#d8dbdf"
+    xmlns:autofit="http://schemas.android.com/apk/res-auto"
+   >
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/edit_text"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="100dp"
+        android:orientation="vertical"
+        android:gravity="center"
+        >
+        <me.grantland.widget.AutofitTextView
+
+            android:id="@+id/text_keyboard_word"
+            android:layout_width="150dp"
+            android:layout_height="60dp"
+            android:background="@drawable/textview_corner"
+            android:gravity="center"
+            android:maxLines="1"
+            android:padding="5dp"
+            android:singleLine="true"
+            android:textSize="40sp"
+            autofit:minTextSize="12sp" />
+        <!--音标-->
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:orientation="horizontal">
+
+            <LinearLayout
+                android:id="@+id/layout_wd_phone_uk"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="10dp"
+                android:gravity="center_vertical"
+                android:orientation="horizontal">
+
+                <TextView
+
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:text="英"
+                    android:textColor="@color/colorGrey"
+                    android:textSize="13sp" />
+
+                <TextView
+                    android:id="@+id/text_word_phone_uk"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="10dp"
+                    android:gravity="center"
+                    android:text="/rɪ'zɜːv/"
+                    android:textColor="@color/colorGrey"
+                    android:textSize="13sp" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/layout_wd_phone_usa"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical"
+                android:orientation="horizontal">
+
+                <TextView
+
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="10dp"
+                    android:text="美"
+                    android:textColor="@color/colorGrey"
+                    android:textSize="13sp" />
+
+                <TextView
+                    android:id="@+id/text_word_phone_usa"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="10dp"
+                    android:text="/rɪ'zɝv/"
+                    android:textColor="@color/colorGrey"
+                    android:textSize="13sp" />
+
+
+
+            </LinearLayout>
+
+
+        </LinearLayout>
+        <!--释义-->
+        <TextView
+
+            android:id="@+id/text_word_trans"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15dp"
+            android:background="?android:attr/selectableItemBackground"
+            android:text="vt. 保留[储备]某物\nn.  贮藏; 储备"
+            android:textColor="@color/colorLightBlack"
+            android:textSize="15sp" />
+
+    </LinearLayout>
+
+
+    <EditText
+        android:layout_centerInParent="true"
+        android:id="@+id/edit_text"
+        android:layout_width="wrap_content"
+        android:layout_height="40dp"
+        android:layout_marginEnd="40dp"
+        android:visibility="invisible"/>
+
+
+    <ImageView
+        android:id="@+id/image_spell_skip"
+        android:layout_centerHorizontal="true"
+        android:layout_width="25dp"
+        android:layout_height="25dp"
+        android:layout_above="@+id/keyboard"
+        android:layout_marginBottom="20dp"
+        android:src="@drawable/icon_left_black" />
+
+    <com.codedawn.word.view.CustomKeyboardView
+        android:layout_marginBottom="10dp"
+        android:id="@+id/keyboard"
+        android:layout_centerHorizontal="true"
+       android:layout_alignParentBottom="true"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#d8dbdf"
+        android:focusable="true"
+        android:focusableInTouchMode="true"
+        android:keyBackground="@drawable/keyboard_bg"
+        android:keyTextColor="#3c3c3c"
+        android:keyTextSize="20dp"
+        android:keyPreviewLayout="@layout/keyboardd_preview"
+        android:keyPreviewHeight="70dp"
+        android:keyPreviewOffset="-3dp"
+        android:labelTextSize="15dp"
+        android:shadowColor="#000"
+        android:shadowRadius="0.0"
+         />
+
+
+</RelativeLayout>

@@ -9,173 +9,283 @@
     android:fitsSystemWindows="true"
     tools:context=".activity.LearnWordActivity">
 
-    <androidx.cardview.widget.CardView
+    <RelativeLayout
         android:id="@+id/card_word_top"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginStart="15dp"
-        android:layout_marginTop="10dp"
-        android:layout_marginEnd="15dp"
-        app:cardBackgroundColor="@color/colorLightWhite"
-        app:cardCornerRadius="10dp"
-        app:cardElevation="0dp">
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="20dp">
 
-        <RelativeLayout
+        <ImageView
+            android:id="@+id/image_learn_back"
+            android:layout_width="25dp"
+            android:layout_height="25dp"
+            android:layout_centerVertical="true"
+            android:src="@drawable/icon_left_black" />
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/img_detail_star"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_centerVertical="true"
+            android:layout_marginStart="10dp"
+            android:layout_marginEnd="10dp"
+            android:layout_alignParentEnd="true"
+            app:cardBackgroundColor="@color/colorBgWhite"
+            app:cardCornerRadius="15dp"
+            app:cardElevation="0dp">
+
+            <RelativeLayout
+                android:id="@+id/layout_wd_star"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="?android:attr/selectableItemBackground">
+
+                <ImageView
+                    android:id="@+id/image_learn_star"
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:layout_centerInParent="true"
+                    android:src="@drawable/icon_star" />
+
+            </RelativeLayout>
+
+        </androidx.cardview.widget.CardView>
+
+    </RelativeLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@+id/linear_word_bottom"
+        android:layout_below="@+id/card_word_top"
+        android:orientation="vertical"
+        android:paddingBottom="10dp">
+
+
+        <com.google.android.material.card.MaterialCardView
+
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp">
+
+            <!--单词-->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="15dp">
+
+                <me.grantland.widget.AutofitTextView
+                    android:id="@+id/text_word"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:gravity="start|center_vertical"
+                    android:maxLines="1"
+                    android:text="reserve"
+                    android:textColor="@color/colorMainBlue"
+                    android:textSize="30sp"
+                    android:textStyle="bold"
+                    autofit:minTextSize="16sp" />
+
+                <!--音标-->
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:orientation="horizontal">
+
+                    <LinearLayout
+                        android:id="@+id/layout_wd_phone_uk"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="10dp"
+                        android:gravity="center_vertical"
+                        android:orientation="horizontal">
+
+                        <TextView
+
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:gravity="center"
+                            android:text="英"
+                            android:textColor="@color/colorGrey"
+                            android:textSize="13sp" />
+
+                        <TextView
+                            android:id="@+id/text_learn_phone_uk"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="10dp"
+                            android:gravity="center"
+                            android:text="/rɪ'zɜːv/"
+                            android:textColor="@color/colorGrey"
+                            android:textSize="13sp" />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/layout_wd_phone_usa"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:gravity="center_vertical"
+                        android:orientation="horizontal">
+
+                        <TextView
+
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="10dp"
+                            android:text="美"
+                            android:textColor="@color/colorGrey"
+                            android:textSize="13sp" />
+
+                        <TextView
+                            android:id="@+id/text_learn_phone_usa"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="10dp"
+                            android:text="/rɪ'zɝv/"
+                            android:textColor="@color/colorGrey"
+                            android:textSize="13sp" />
+
+                    </LinearLayout>
+
+                </LinearLayout>
+            </LinearLayout>
+        </com.google.android.material.card.MaterialCardView>
+
+        <TextView
+            android:id="@+id/text_hint"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginBottom="40dp"
+            android:gravity="center_horizontal|bottom"
+            android:text="瞬间回忆起单词选[认识]\n需要思考才想起选[模糊]">
+
+        </TextView>
+
+
+        <!--第一部分，词汇的基本含义-->
+        <androidx.cardview.widget.CardView
+            android:id="@+id/card_word_trans"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginStart="10dp"
             android:layout_marginTop="10dp"
             android:layout_marginEnd="10dp"
-            android:layout_marginBottom="10dp">
+            app:cardBackgroundColor="@color/colorLightWhite"
+            app:cardCornerRadius="5dp"
+            app:cardElevation="0dp">
 
-            <LinearLayout
-                android:id="@+id/layout_word_top_left"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_centerVertical="true"
-                android:gravity="center_vertical"
-                android:orientation="horizontal">
-
-                <ImageView
-                    android:layout_width="17dp"
-                    android:layout_height="17dp"
-                    android:src="@drawable/icon_home" />
-
-                <TextView
-                    android:id="@+id/text_word_top"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="5dp"
-                    android:textColor="@color/colorLightGrey"
-                    android:textSize="13sp"
-                    android:textStyle="bold" />
-
-            </LinearLayout>
-
-            <TextView
-                android:id="@+id/text_word_top_mean"
+            <RelativeLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_centerVertical="true"
-                android:layout_marginStart="5dp"
-                android:layout_toStartOf="@id/layout_word_top_right"
-                android:layout_toEndOf="@+id/layout_word_top_left"
-                android:ellipsize="end"
-                android:maxLines="1"
-                android:text=""
-                android:textColor="@color/colorLightGrey"
-                android:textSize="13sp" />
+                android:padding="10dp">
 
-            <LinearLayout
-                android:id="@+id/layout_word_top_right"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_alignParentEnd="true"
-                android:layout_centerVertical="true"
-                android:gravity="center_vertical"
-                android:orientation="horizontal">
-
-                <RelativeLayout
-                    android:layout_width="2dp"
-                    android:layout_height="10dp"
-                    android:layout_marginStart="15dp"
-                    android:layout_marginEnd="10dp"
-                    android:background="@color/colorLightGrey" />
-
-                <TextView
-                    android:id="@+id/text_new_num_top"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="新学15"
-                    android:textColor="@color/colorLightGrey"
-                    android:textSize="13sp" />
-
-                <TextView
-                    android:id="@+id/text_review_num_top"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="10dp"
-                    android:text="复习9"
-                    android:textColor="@color/colorLightGrey"
-                    android:textSize="13sp" />
-
-            </LinearLayout>
-
-        </RelativeLayout>
-
-    </androidx.cardview.widget.CardView>
-
-    <androidx.cardview.widget.CardView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_above="@+id/linear_word_bottom"
-        android:layout_below="@+id/card_word_top"
-        android:layout_marginStart="15dp"
-        android:layout_marginTop="20dp"
-        android:layout_marginEnd="15dp"
-        android:layout_marginBottom="20dp"
-        app:cardBackgroundColor="@color/colorBgWhite"
-        app:cardCornerRadius="10dp"
-        app:cardElevation="0dp">
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:gravity="center"
-            android:orientation="vertical">
-
-            <me.grantland.widget.AutofitTextView
-                android:id="@+id/text_learn_word"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="10dp"
-                android:layout_marginEnd="10dp"
-                android:gravity="center"
-                android:maxLines="1"
-                android:singleLine="true"
-                android:text="sentence"
-                android:textColor="@color/colorMainBlue"
-                android:textSize="52sp"
-                android:textStyle="bold"
-                autofit:minTextSize="16sp" />
-
-            <TextView
-                android:id="@+id/text_learn_word_phone"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="12dp"
-                android:text="/'sent(ə)ns/"
-                android:textColor="@color/colorLightGrey"
-                android:textSize="15sp" />
-
-            <androidx.cardview.widget.CardView
-                android:id="@+id/card_lw_tip"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="50dp"
-                app:cardBackgroundColor="@color/colorLightWhite"
-                app:cardCornerRadius="10dp"
-                app:cardElevation="0dp">
-
-                <TextView
-                    android:id="@+id/text_lw_tip"
+                <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:paddingStart="20dp"
-                    android:paddingTop="15dp"
-                    android:paddingEnd="20dp"
-                    android:paddingBottom="15dp"
-                    android:text="This sentence bears no other construction."
-                    android:textColor="@color/colorBlack"
-                    android:textSize="17sp"
-                    android:textStyle="bold" />
+                    android:orientation="vertical">
 
-            </androidx.cardview.widget.CardView>
+                    <!--释义-->
+                    <TextView
+                        android:id="@+id/text_word_trans"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:background="?android:attr/selectableItemBackground"
+                        android:text="vt. 保留[储备]某物\nn. 贮藏; 储备"
+                        android:textColor="@color/colorLightBlack"
+                        android:textSize="15sp" />
 
-        </LinearLayout>
+                </LinearLayout>
 
-    </androidx.cardview.widget.CardView>
+            </RelativeLayout>
 
+        </androidx.cardview.widget.CardView>
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/card_wd_pic"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginEnd="10dp"
+            app:cardBackgroundColor="@color/colorLightWhite"
+            app:cardCornerRadius="5dp"
+            app:cardElevation="0dp">
+
+            <LinearLayout
+                android:id="@+id/linear_example"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:paddingStart="15dp"
+                android:paddingTop="20dp"
+                android:paddingEnd="10dp"
+                android:paddingBottom="20dp">
+
+                <TextView
+                    android:id="@+id/text_example"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Users can access their voice mail remotely.\n用户可以远程获取语音邮件。"></TextView>
+
+            </LinearLayout>
+
+        </androidx.cardview.widget.CardView>
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/card_wd_remMethod"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginEnd="10dp"
+            app:cardBackgroundColor="@color/colorLightWhite"
+            app:cardCornerRadius="5dp"
+            app:cardElevation="0dp">
+
+            <LinearLayout
+                android:id="@+id/linear_trans"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                android:paddingStart="15dp"
+                android:paddingTop="20dp"
+                android:paddingEnd="15dp"
+                android:paddingBottom="20dp">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:text="中英释义"
+                        android:textColor="@color/colorLightBlack"
+                        android:textSize="17sp" />
+
+                </RelativeLayout>
+
+                <TextView
+                    android:id="@+id/text_other_trans"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="15dp"
+                    android:text="v. 获取  to find information, especially on a computer"
+                    android:textColor="@color/colorLightBlack"
+                    android:textSize="15sp" />
+
+            </LinearLayout>
+
+        </androidx.cardview.widget.CardView>
+
+    </LinearLayout>
     <!--学习界面-->
     <!--认识/不认识-->
 
@@ -195,7 +305,8 @@
             android:layout_marginStart="15dp"
             android:layout_marginEnd="15dp"
             android:layout_marginBottom="20dp"
-            android:orientation="horizontal">
+            android:orientation="horizontal"
+            android:visibility="visible">
 
             <androidx.cardview.widget.CardView
                 android:layout_width="0dp"
@@ -207,7 +318,7 @@
                 app:cardElevation="0dp">
 
                 <RelativeLayout
-                    android:id="@+id/card_know"
+                    android:id="@+id/relative_know"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:background="?android:attr/selectableItemBackground"
@@ -238,7 +349,7 @@
                 app:cardElevation="0dp">
 
                 <RelativeLayout
-                    android:id="@+id/card_dark"
+                    android:id="@+id/relative_unclear"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:background="?android:attr/selectableItemBackground"
@@ -290,128 +401,57 @@
 
         </LinearLayout>
 
-        <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/recyclerview_word_mean"
+        <androidx.cardview.widget.CardView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginStart="10dp"
-            android:layout_marginEnd="10dp"
-            android:layout_marginBottom="10dp"
-            android:orientation="vertical"
-            android:overScrollMode="never"
-            android:scrollbars="none"
-            android:visibility="gone">
-
-        </androidx.recyclerview.widget.RecyclerView>
-
-        <LinearLayout
-            android:id="@+id/layout_word_bottom"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="20dp"
-            android:layout_marginEnd="20dp"
-            android:layout_marginBottom="20dp"
-            android:orientation="horizontal">
+            app:cardBackgroundColor="@color/colorBgWhite"
+            app:cardCornerRadius="10dp"
+            app:cardElevation="0dp">
 
             <RelativeLayout
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="1">
+                android:id="@+id/relative_next_word"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="?android:attr/selectableItemBackground"
+                android:paddingTop="20dp"
+                android:paddingBottom="20dp"
+                android:visibility="visible"
+                android:layout_marginVertical="10dp"
+                android:layout_marginHorizontal="50dp"
+                >
 
-                <androidx.cardview.widget.CardView
-                    android:layout_width="40dp"
-                    android:layout_height="40dp"
-                    android:layout_centerVertical="true"
-                    app:cardBackgroundColor="@color/colorLightWhite"
-                    app:cardCornerRadius="20dp"
-                    app:cardElevation="0dp">
-
-                    <RelativeLayout
-                        android:id="@+id/layout_word_delete"
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:background="?android:attr/selectableItemBackground">
-
-                        <ImageView
-                            android:layout_width="20dp"
-                            android:layout_height="20dp"
-                            android:layout_centerInParent="true"
-                            android:layout_gravity="center"
-                            android:src="@drawable/icon_ash" />
-
-                    </RelativeLayout>
-
-                </androidx.cardview.widget.CardView>
-
-            </RelativeLayout>
-
-            <RelativeLayout
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="1">
-
-                <androidx.cardview.widget.CardView
-                    android:layout_width="40dp"
-                    android:layout_height="40dp"
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
                     android:layout_centerInParent="true"
-                    app:cardBackgroundColor="@color/colorLightWhite"
-                    app:cardCornerRadius="20dp"
-                    app:cardElevation="0dp">
+                    android:layout_marginHorizontal="30dp"
+                    android:gravity="center"
 
-                    <RelativeLayout
-                        android:id="@+id/layout_word_voice"
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:background="?android:attr/selectableItemBackground">
-
-                        <ImageView
-                            android:layout_width="20dp"
-                            android:layout_height="20dp"
-                            android:layout_centerInParent="true"
-                            android:layout_gravity="center"
-                            android:scaleType="fitXY"
-                            android:src="@drawable/icon_voice" />
-
-                    </RelativeLayout>
-
-                </androidx.cardview.widget.CardView>
+                    android:text="下一词"
+                    android:textColor="@color/colorBlack"
+                    android:textSize="15sp"
+                    android:textStyle="bold" />
 
             </RelativeLayout>
 
-            <RelativeLayout
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="1">
+        </androidx.cardview.widget.CardView>
 
-                <androidx.cardview.widget.CardView
-                    android:layout_width="40dp"
-                    android:layout_height="40dp"
-                    android:layout_alignParentEnd="true"
-                    android:layout_centerVertical="true"
-                    app:cardBackgroundColor="@color/colorLightWhite"
-                    app:cardCornerRadius="20dp"
-                    app:cardElevation="0dp">
 
-                    <RelativeLayout
-                        android:id="@+id/layout_word_tip"
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:background="?android:attr/selectableItemBackground">
+<!--        <androidx.recyclerview.widget.RecyclerView-->
+<!--            android:id="@+id/recyclerview_word_mean"-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:layout_marginStart="10dp"-->
+<!--            android:layout_marginEnd="10dp"-->
+<!--            android:layout_marginBottom="10dp"-->
+<!--            android:orientation="vertical"-->
+<!--            android:overScrollMode="never"-->
+<!--            android:scrollbars="none"-->
+<!--            android:visibility="gone">-->
 
-                        <ImageView
-                            android:layout_width="20dp"
-                            android:layout_height="20dp"
-                            android:layout_centerInParent="true"
-                            android:layout_gravity="center"
-                            android:scaleType="fitXY"
-                            android:src="@drawable/icon_forget" />
+<!--        </androidx.recyclerview.widget.RecyclerView>-->
 
-                    </RelativeLayout>
-                </androidx.cardview.widget.CardView>
 
-            </RelativeLayout>
-
-        </LinearLayout>
 
     </LinearLayout>
 
